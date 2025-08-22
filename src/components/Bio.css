@@ -1,6 +1,6 @@
 .bio-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 40px;
   align-items: center;
 }
@@ -9,36 +9,47 @@
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 20px;
-  color: #555;
+  color: #000000;
+}
+
+.email-link {
+  color: #7b1fa2;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.email-link:hover {
+  color: #5e1571;
+  text-decoration: underline;
+}
+
+.inline-gif {
+  height: 1.5em;
+  width: auto;
+  vertical-align: middle;
+  display: inline;
 }
 
 .bio-image {
   display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
   justify-content: center;
 }
 
-.image-placeholder {
-  width: 200px;
-  height: 200px;
+.bio-image img {
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 500;
+  object-fit: cover;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
-  .bio-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  
-  .image-placeholder {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
+  .bio-image img {
+    width: 200px;
+    height: 200px;
   }
 }
